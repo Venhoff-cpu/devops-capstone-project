@@ -1,3 +1,12 @@
+---
+name: User Story
+about: Default user stroy template
+title: "[USER-STORY]"
+labels: ''
+assignees: ''
+
+---
+
 **As a** [role]
 **I need** [function]
 **So that** [benefit]
