@@ -128,7 +128,13 @@ class TestAccountService(TestCase):
     ######################################################################
     def test_get_account(self):
         """It should Read an Account that is found"""
-        self._create_accounts(1)
+        account = AccountFactory()
+        response = self.client.post(
+            BASE_URL, 
+            json=account.serialize(), 
+            content_type="application/json"
+        )
+        new_account = response.get_json()
         resp = self.client.get(f"{BASE_URL}/{new_account['id']}")
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
     
